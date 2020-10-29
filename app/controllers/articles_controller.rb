@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    if @article.valid?
+    if @article.valid? # можно не добавлять, так как в методе save, есть валидация(можно написать просто if article.save...)
       @article.save
       redirect_to @article
       #render plain: params[:article].inspect
@@ -22,6 +22,21 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
    
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+      if @article.update(article_params)
+      redirect_to @article
+      #render plain: params[:article].inspect
+    else
+      render action: 'edit'
+    end
+  end
+
+
    private
 
    def article_params
