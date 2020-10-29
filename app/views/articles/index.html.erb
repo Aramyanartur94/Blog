@@ -1,0 +1,12 @@
+<h1>List of articles:</h1>
+
+   <% @articles.each do |article| %>
+   <h2>
+    Название статьи: <%= article.title %>
+   </h2>
+   <p>
+    Содержание:<%= article.text %>
+   </p>
+   <hr />
+
+  <% end %>
