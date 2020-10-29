@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.valid?
       @article.save
+      redirect_to @article
       #render plain: params[:article].inspect
     else
       render action: 'new'
