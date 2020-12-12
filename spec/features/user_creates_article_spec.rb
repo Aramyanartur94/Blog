@@ -11,13 +11,7 @@ feature "Article Creation" do
 end
 
   scenario "allows a user to create new article" do
-    visit new_article_path
-
-    fill_in :article_title, :with => 'good new'
-    fill_in :article_text, :with => 'hi, this is good new'
-
-    click_button 'Save Article'
-
+    add_article
     expect(page).to have_content 'good new'
   end
 end
