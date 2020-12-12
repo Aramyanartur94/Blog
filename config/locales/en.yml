@@ -38,4 +38,6 @@ en:
 
   articles:
     new_article: "New Article!!!"
+    show:
+      add_comment: "Add comment:"
 

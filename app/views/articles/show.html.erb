@@ -12,7 +12,7 @@
     </p>
   <% end %>
 
-<h2>Add comment</h2>
+<h2><%= t('articles.show.add_comment') %></h2>
 <p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
  
